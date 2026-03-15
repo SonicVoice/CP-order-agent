@@ -40,8 +40,8 @@
   "pos": {
     "system": "supermenu",
     "endpoint": "https://www.mealage.us/aivoice/orders.jsp",
-    "restaurant_id": "8000",
-    "password": "126790",
+    "restaurant_id": "80001",
+    "password": "ABC888",
     "brand_name": "Pizza Demo"
   },
   "voice": {
@@ -51,7 +51,7 @@
     "speed": 1.0
   },
   "transfer_number": "(888) 888-8888",
-  "google_maps_api_key": "YOUR_GOOGLE_MAPS_API_KEY",
+  "google_maps_api_key": "AIzaSyD5qr2UXoIdPJd3W4Gnu6rz4dQXQexEQN0",
   "upsell": {
     "enabled": true,
     "max_attempts_per_phase": 1,

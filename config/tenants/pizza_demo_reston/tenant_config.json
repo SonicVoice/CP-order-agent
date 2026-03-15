@@ -1,0 +1,65 @@
+{
+  "tenant_id": "pizza_demo_reston",
+  "restaurant_name": "Pizza Demo",
+  "greeting_name": "Pizza Demo",
+  "phone": "(888) 888-8888",
+  "address": {
+    "line1": "4195 Main Street",
+    "city": "Reston",
+    "state": "VA",
+    "zip": "20191",
+    "lat": 38.9586,
+    "lng": -77.3570
+  },
+  "hours": {
+    "timezone": "America/New_York",
+    "schedule": {
+      "monday":    {"open": "11:00", "close": "22:00"},
+      "tuesday":   {"open": "11:00", "close": "22:00"},
+      "wednesday": {"open": "11:00", "close": "22:00"},
+      "thursday":  {"open": "11:00", "close": "22:00"},
+      "friday":    {"open": "11:00", "close": "22:00"},
+      "saturday":  {"open": "11:00", "close": "22:00"},
+      "sunday":    {"open": "11:00", "close": "22:00"}
+    },
+    "holiday_closures": []
+  },
+  "order_types": ["pickup", "delivery"],
+  "delivery": {
+    "fee": 1.95,
+    "minimum_order": 10.00,
+    "max_distance_miles": 4.0,
+    "eta_minutes": {"min": 30, "max": 45}
+  },
+  "pickup": {
+    "eta_minutes": {"min": 15, "max": 20}
+  },
+  "tax_rate": 0.06,
+  "payment_accepted": ["CASH"],
+  "default_payment": "CASH",
+  "pos": {
+    "system": "supermenu",
+    "endpoint": "https://www.mealage.us/aivoice/orders.jsp",
+    "restaurant_id": "SET_IN_RENDER_ENV_VARS",
+    "password": "SET_IN_RENDER_ENV_VARS",
+    "brand_name": "Pizza Demo"
+  },
+  "voice": {
+    "provider": "retell",
+    "voice_id": "configure_per_deployment",
+    "language": "en-US",
+    "speed": 1.0
+  },
+  "transfer_number": "(888) 888-8888",
+  "google_maps_api_key": "SET_IN_RENDER_ENV_VARS",
+  "upsell": {
+    "enabled": true,
+    "max_attempts_per_phase": 1,
+    "priority": ["combo_completion", "size_upgrade", "add_drink", "add_dessert"]
+  },
+  "customer_fields": {
+    "require_name": true,
+    "require_phone": false,
+    "default_email": "phone@order.com"
+  }
+}

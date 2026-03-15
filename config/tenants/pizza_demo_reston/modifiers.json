@@ -1,0 +1,198 @@
+{
+  "modifier_groups": [
+    {
+      "group_key": "toppings",
+      "display_name": "Pizza Toppings",
+      "prompt_question": "What toppings would you like?",
+      "required": false,
+      "min_selections": 0,
+      "max_selections": 20,
+      "price_by_size": {
+        "10": {"standard": 1.00, "half": 0.50, "premium": 1.50, "premium_half": 1.00},
+        "12": {"standard": 1.50, "half": 0.75, "premium": 2.00, "premium_half": 1.00},
+        "14": {"standard": 2.00, "half": 1.00, "premium": 2.00, "premium_half": 1.25},
+        "16": {"standard": 2.50, "half": 1.25, "premium": 3.50, "premium_half": 1.75},
+        "18": {"standard": 3.00, "half": 1.50, "premium": 4.00, "premium_half": 2.00}
+      },
+      "options": [
+        {"name": "Pepperoni", "price_tier": "standard", "aliases": ["pep", "roni"]},
+        {"name": "Sausage", "price_tier": "standard", "aliases": []},
+        {"name": "Ground Beef", "price_tier": "standard", "aliases": ["beef", "hamburger"]},
+        {"name": "Ham", "price_tier": "standard", "aliases": []},
+        {"name": "Bacon", "price_tier": "standard", "aliases": []},
+        {"name": "Chicken", "price_tier": "standard", "aliases": []},
+        {"name": "Grilled Chicken", "price_tier": "standard", "aliases": []},
+        {"name": "Salami", "price_tier": "standard", "aliases": []},
+        {"name": "Mushrooms", "price_tier": "standard", "aliases": ["mushroom"]},
+        {"name": "Onions", "price_tier": "standard", "aliases": ["onion"]},
+        {"name": "Green Peppers", "price_tier": "standard", "aliases": ["green pepper", "peppers"]},
+        {"name": "Black Olives", "price_tier": "standard", "aliases": ["olives"]},
+        {"name": "Jalapeños", "price_tier": "standard", "aliases": ["jalapeno", "jalapenos"]},
+        {"name": "Pineapple", "price_tier": "standard", "aliases": []},
+        {"name": "Tomatoes", "price_tier": "standard", "aliases": ["tomato"]},
+        {"name": "Spinach", "price_tier": "standard", "aliases": []},
+        {"name": "Broccoli", "price_tier": "standard", "aliases": []},
+        {"name": "Sweet Peppers", "price_tier": "standard", "aliases": []},
+        {"name": "Banana Peppers", "price_tier": "standard", "aliases": ["banana pepper"]},
+        {"name": "Extra Cheese", "price_tier": "standard", "aliases": ["extra mozz"]},
+        {"name": "Extra Sauce", "price_tier": "standard", "aliases": []},
+        {"name": "Shrimp", "price_tier": "premium", "aliases": []},
+        {"name": "Anchovi", "price_tier": "premium", "aliases": ["anchovies", "anchovy"]}
+      ]
+    },
+    {
+      "group_key": "wing_flavor",
+      "display_name": "Wing Flavor",
+      "prompt_question": "What flavor on the wings?",
+      "required": true,
+      "min_selections": 1,
+      "max_selections": 1,
+      "options": [
+        {"name": "Southern Style", "price": 0, "aliases": ["southern", "plain southern"]},
+        {"name": "BBQ", "price": 0, "aliases": ["barbecue", "bbq sauce"]},
+        {"name": "Honey BBQ", "price": 0, "aliases": ["honey barbecue"]},
+        {"name": "Hot", "price": 0, "aliases": ["hot sauce", "hot flavor"]},
+        {"name": "Mild", "price": 0, "aliases": ["mild sauce"]},
+        {"name": "Extra Hot", "price": 0, "aliases": ["super hot"]},
+        {"name": "Lemon Pepper", "price": 0, "aliases": []},
+        {"name": "Old Bay", "price": 0, "aliases": ["oldbay"]},
+        {"name": "Honey Old Bay", "price": 0, "aliases": []},
+        {"name": "Honey Lemon Pepper", "price": 0, "aliases": []},
+        {"name": "Honey Mustard", "price": 0, "aliases": []},
+        {"name": "Honey Garlic", "price": 0, "aliases": []},
+        {"name": "Bourbon", "price": 0, "aliases": []},
+        {"name": "Mango Habanero", "price": 0, "aliases": ["mango"]},
+        {"name": "Caribbean Jerk", "price": 0, "aliases": ["caribbean"]},
+        {"name": "Roasted Garlic", "price": 0, "aliases": []},
+        {"name": "General Tso's", "price": 0, "aliases": ["general tso"]},
+        {"name": "Jamaican Jerk", "price": 0, "aliases": ["jamaican", "jerk"]},
+        {"name": "Spicy BBQ", "price": 0, "aliases": ["spicy barbecue"]},
+        {"name": "Thai Chili", "price": 0, "aliases": ["thai"]},
+        {"name": "Toxic Waste", "price": 0, "aliases": ["toxic"]},
+        {"name": "Garlic Parmesan", "price": 0, "aliases": ["garlic parm"]},
+        {"name": "Maryland Style", "price": 0, "aliases": ["maryland"]},
+        {"name": "Spicy Honey BBQ", "price": 0, "aliases": []},
+        {"name": "No Flavor", "price": 0, "aliases": ["plain", "no sauce", "naked"]}
+      ]
+    },
+    {
+      "group_key": "wing_dressing",
+      "display_name": "Wing Dressing",
+      "prompt_question": "Ranch or blue cheese with that?",
+      "required": true,
+      "min_selections": 1,
+      "max_selections": 1,
+      "options": [
+        {"name": "Ranch", "price": 0, "aliases": ["ranch dressing"]},
+        {"name": "Blue Cheese", "price": 0, "aliases": ["bleu cheese", "blue"]},
+        {"name": "Hot Sauce", "price": 0, "aliases": ["hot sauce side"]}
+      ]
+    },
+    {
+      "group_key": "sub_fixins",
+      "display_name": "Sub Fixins",
+      "prompt_question": "What would you like on it? Or everything?",
+      "required": true,
+      "min_selections": 1,
+      "max_selections": 20,
+      "options": [
+        {"name": "Everything", "price": 0, "aliases": ["the works", "all the fixins", "loaded"]},
+        {"name": "Everything NO HOTS", "price": 0, "aliases": ["everything no hot peppers"]},
+        {"name": "Lettuce", "price": 0, "aliases": []},
+        {"name": "Tomatoes", "price": 0, "aliases": ["tomato"]},
+        {"name": "Mayo", "price": 0, "aliases": ["mayonnaise"]},
+        {"name": "Mustard", "price": 0, "aliases": []},
+        {"name": "Ketchup", "price": 0, "aliases": []},
+        {"name": "Onions", "price": 0, "aliases": ["onion"]},
+        {"name": "Hot Peppers", "price": 0, "aliases": ["hots"]},
+        {"name": "Raw Onions", "price": 0, "aliases": []},
+        {"name": "Grilled Onions", "price": 0, "aliases": []},
+        {"name": "Pickles", "price": 0, "aliases": ["pickle"]},
+        {"name": "Salt & Pepper", "price": 0, "aliases": ["salt and pepper", "s and p"]}
+      ]
+    },
+    {
+      "group_key": "cheese_choice",
+      "display_name": "Cheese",
+      "prompt_question": "What kind of cheese?",
+      "required": true,
+      "min_selections": 1,
+      "max_selections": 1,
+      "options": [
+        {"name": "American", "price": 0, "aliases": ["american cheese"]},
+        {"name": "Provolone", "price": 0, "aliases": ["prov"]},
+        {"name": "Mozzarella", "price": 0, "aliases": ["mozz"]},
+        {"name": "Feta Cheese", "price": 0, "aliases": ["feta"]},
+        {"name": "No Cheese", "price": 0, "aliases": ["no cheese please"]}
+      ]
+    },
+    {
+      "group_key": "soda_flavor",
+      "display_name": "Soda Flavor",
+      "prompt_question": "What kind of soda?",
+      "required": true,
+      "min_selections": 1,
+      "max_selections": 1,
+      "options": [
+        {"name": "Pepsi", "price": 0, "aliases": []},
+        {"name": "Coke", "price": 0, "aliases": ["coca cola"]},
+        {"name": "Sierra Mist", "price": 0, "aliases": []},
+        {"name": "Dr Pepper", "price": 0, "aliases": ["dr. pepper", "doctor pepper"]},
+        {"name": "Sprite", "price": 0, "aliases": []},
+        {"name": "Mountain Dew", "price": 0, "aliases": ["mt dew", "mtn dew"]},
+        {"name": "Fanta Orange", "price": 0, "aliases": ["orange fanta", "orange soda"]},
+        {"name": "Fanta Grape", "price": 0, "aliases": ["grape fanta", "grape soda"]},
+        {"name": "Lemonade", "price": 0, "aliases": []},
+        {"name": "Cherry Coke", "price": 0, "aliases": []},
+        {"name": "Diet Pepsi", "price": 0, "aliases": []},
+        {"name": "Diet Coke", "price": 0, "aliases": []},
+        {"name": "Cherry Pepsi", "price": 0, "aliases": []},
+        {"name": "Ginger Ale", "price": 0, "aliases": []},
+        {"name": "Root Beer", "price": 0, "aliases": []},
+        {"name": "Coke Zero", "price": 0, "aliases": ["zero"]},
+        {"name": "Fruit Punch", "price": 0, "aliases": ["punch"]},
+        {"name": "Half and Half", "price": 0, "aliases": ["half & half"]},
+        {"name": "Crush Grape", "price": 0, "aliases": []},
+        {"name": "Fanta Pineapple", "price": 0, "aliases": ["pineapple fanta"]},
+        {"name": "Fanta Strawberry", "price": 0, "aliases": ["strawberry fanta"]},
+        {"name": "Brisk", "price": 0, "aliases": ["brisk tea"]},
+        {"name": "Starry Lemon Lime", "price": 0, "aliases": ["starry"]}
+      ]
+    },
+    {
+      "group_key": "salad_dressing",
+      "display_name": "Salad Dressing",
+      "prompt_question": "What dressing would you like?",
+      "required": true,
+      "min_selections": 1,
+      "max_selections": 1,
+      "options": [
+        {"name": "Ranch", "price": 0, "aliases": []},
+        {"name": "Blue Cheese", "price": 0, "aliases": ["bleu cheese"]},
+        {"name": "Creamy Italian", "price": 0, "aliases": ["italian"]},
+        {"name": "Thousand Island", "price": 0, "aliases": ["1000 island"]},
+        {"name": "Caesar", "price": 0, "aliases": []},
+        {"name": "Balsamic Vinaigrette", "price": 0, "aliases": ["balsamic"]},
+        {"name": "French", "price": 0, "aliases": []}
+      ]
+    },
+    {
+      "group_key": "sub_extras",
+      "display_name": "Sub Extras",
+      "prompt_question": "Any extras like bacon, extra meat, or extra cheese?",
+      "required": false,
+      "min_selections": 0,
+      "max_selections": 10,
+      "options": [
+        {"name": "Extra Meat", "price": 1.00, "aliases": ["double meat"]},
+        {"name": "Bacon", "price": 1.00, "aliases": ["add bacon"]},
+        {"name": "Extra Cheese", "price": 1.00, "aliases": ["double cheese"]},
+        {"name": "Ham", "price": 1.00, "aliases": ["add ham"]},
+        {"name": "Turkey", "price": 1.00, "aliases": ["add turkey"]},
+        {"name": "Shrimp", "price": 1.00, "aliases": ["add shrimp"]},
+        {"name": "Sausage", "price": 1.00, "aliases": ["add sausage"]},
+        {"name": "Pepperoni", "price": 1.00, "aliases": ["add pepperoni"]}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "vapi-pos-adapter",
+  "version": "1.0.0",
+  "description": "Vapi webhook adapter for Supermenu POS bridge",
+  "main": "vapi_webhook_server.js",
+  "scripts": {
+    "start": "node vapi_webhook_server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "axios": "^1.7.0"
+  }
+}

@@ -276,3 +276,83 @@ const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Vapi webhook adapter running on port ${PORT}`);
 });
+
+// ============================================================
+// PASTE THIS INTO YOUR EXISTING server.js (before app.listen)
+// Routes Vapi function-call messages to your existing handlers
+// ============================================================
+
+app.post('/vapi/webhook', async (req, res) => {
+  const { message } = req.body;
+
+  if (!message || message.type !== 'function-call') {
+    return res.status(200).json({});
+  }
+
+  const name = message.functionCall?.name;
+  const args = message.functionCall?.parameters || {};
+
+  console.log(`[VAPI] ${name}`, JSON.stringify(args).slice(0, 200));
+
+  let result;
+  try {
+    switch (name) {
+      case 'verify_address':
+        // Call your existing verify_address handler
+        result = await handleVerifyAddress({ address: args.address });
+        break;
+
+      case 'process_payment':
+        // Call your existing process_payment handler
+        result = await handleProcessPayment({
+          card_number: args.card_number,
+          expiration: args.expiration,
+          cvv: args.cvv,
+          amount: args.amount,
+          zip: args.zip || '',
+          invoice: args.invoice || ''
+        });
+        break;
+
+      case 'get_caller_id': {
+        const phone = req.body?.call?.customer?.number || '';
+        if (phone) {
+          const d = phone.replace(/\D/g, '').slice(-10);
+          result = { status: 'found', phone: `(${d.slice(0,3)}) ${d.slice(3,6)}-${d.slice(6)}` };
+        } else {
+          result = await handleGetCallerId();
+        }
+        break;
+      }
+
+      case 'submit_order':
+        // Call your existing submit_order handler
+        result = await handleSubmitOrder(args);
+        break;
+
+      default:
+        result = { error: true, message: `Unknown: ${name}` };
+    }
+  } catch (err) {
+    console.error(`[VAPI] ${name} error:`, err.message);
+    result = { error: true, message: err.message };
+  }
+
+  // Vapi expects { result: "string" } for function-call responses
+  return res.status(200).json({
+    result: typeof result === 'string' ? result : JSON.stringify(result)
+  });
+});
+
+// ============================================================
+// IMPORTANT: Replace these function names with YOUR actual handlers
+// from your existing server.js code:
+//
+//   handleVerifyAddress  → your verify_address handler
+//   handleProcessPayment → your process_payment handler  
+//   handleGetCallerId    → your get_caller_id handler
+//   handleSubmitOrder    → your submit_order handler
+//
+// If your existing handlers are inline in route callbacks,
+// extract them into named functions first.
+// ============================================================
